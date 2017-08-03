@@ -11,12 +11,12 @@ import requests
 输入:json分析页地址
 输出:下载图片到默认路径下'''
 
-base_url = "http://m.weibo.cn/page/json?containerid=1005053303323994_-_WEIBO_SECOND_PROFILE_WEIBO&page=1"
+base_url = "http://m.weibo.cn/page/json?containerid=1005053303323994_-_WEIBO_SECOND_PROFILE_WEIBO"
 basedir = r"E:\\onlyanose\\"
 
 headers = {'Connection' : 'keep-alive'}
 s = requests.session()
-htmlj = s.get(base_url, headers = headers).json()
+htmlj = s.get(base_url, headers=headers).json()
 maxpage = htmlj['cards'][0]['maxPage']
 L = []
 for i in range(maxpage):
